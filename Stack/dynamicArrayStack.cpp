@@ -37,7 +37,9 @@ class Stack {
             if (topOfStack = maxSize - 1){
                 resize (2 * maxSize);
             }
-            array[++topOfStack] = data;
+            else{
+                array[++topOfStack] = data;
+            }
         }
 
         int peek(){
