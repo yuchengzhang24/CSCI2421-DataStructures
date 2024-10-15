@@ -48,6 +48,8 @@ class BSTree{
         void insert(int data);
         void deleteNode(int data);
         BSTNode *find(int data);
+        BSTNode *findRecursively(BSTNode *p, int key);
+        BSTNode *BSTree::findMin(BSTNode *node);
         void traversePreOrder(BSTNode *p) const;
         void printPreOrder() const; 
         void traverseInOrder(BSTNode *p) const;
@@ -91,6 +93,20 @@ BSTNode *BSTree:: find(int data){                                               
 }
 
 
+//Finding a Node Recursive Solution 
+BSTNode *BSTree::findRecursively(BSTNode *p, int key){
+    if (p == 0 || p -> getData() == key){                                            //If Tree is empty or key is the root, return root.
+        return p;
+    }
+    else if (p -> getData() < key){
+        return findRecursively(p -> getLeft(), key);                                //If data is less than key, go left and recall function
+    }
+    else {
+        return findRecursively(p -> getRight(), key);                               //If data is more than key, go right and recall function
+    }
+}
+
+
 //Finding Minumum Node (Nonrecursive)
 BSTNode *minValue(BSTNode *node){
     BSTNode *current = node;
@@ -99,6 +115,20 @@ BSTNode *minValue(BSTNode *node){
     }
 
     return current;                                                                 //When the left of current points to NULL, we can say that is the mininum value and return that 
+}
+
+
+//Finding Minimum Node Recursive Solution 
+BSTNode *BSTree::findMin(BSTNode *node){
+    if (node == NULL){                                                              //If tree is empty, return NULL
+        return NULL;
+    }
+    else if (node -> getLeft() == NULL){                                            //Else if the left child of node is NULL, you've reached the smallest value and return the node
+        return node;
+    }
+    else{
+        return findMin(node -> getLeft());                                          //Else recall the function recursively until you reach the minimum value
+    }
 }
 
 
