@@ -40,7 +40,7 @@ public:
     // insert the number at the given index
     void insertAtIndex(int data, int index);
     
-    // ideleteAtIndex function
+    // deleteAtIndex function
     // takes an index as input
     // delete the number from the given index
     void deleteAtIndex(int index);
