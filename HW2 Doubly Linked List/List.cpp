@@ -143,28 +143,34 @@ void List::readItem(int index){
 
 
 void List::reverseList(){
-  // Check if the list is empty
+  // Check if the list is empty or has only one element
   if (headPtr == NULL || headPtr -> getNextPtr() == NULL){
     cout << "List is empty." << endl;
     return;
   }
 
+  // Initialize pointers to traverse and reverse the list
   Node *currentNode = headPtr;
   Node *nextNode = NULL;
   Node *prevNode = NULL;
 
-  //prevNode -> setPrevPtr(currentNode);
-
+  // Traverse the list and reverse the pointers
   while(currentNode != NULL){
+    // Set the next node
     nextNode = currentNode -> getNextPtr();
+    // Reverse the previous pointer to point to the next node
     currentNode -> setPrevPtr(nextNode);
+    // Reverse the next pointer to point to the previous node
     currentNode -> setNextPtr(prevNode);
+    // Traverse to the next node
     prevNode = currentNode;
     currentNode = nextNode;
   }
 
+  // Update the head and tail pointers
   tailPtr = headPtr;
   headPtr = prevNode;
+  // Point tail to NULL
   tailPtr -> setNextPtr(NULL);
 }
 
