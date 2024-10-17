@@ -27,8 +27,12 @@ public:
     
     //accessor functions
     //complete the definitions of accessor functions.
-    Node* getHeadPtr() const;
-    Node* getTailPtr() const;
+    Node* getHeadPtr() const{
+        return headPtr;
+    }
+    Node* getTailPtr() const{
+        return tailPtr;
+    }
     
     // insert function
     // takes a integer number as an input
