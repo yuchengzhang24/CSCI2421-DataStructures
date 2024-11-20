@@ -17,9 +17,8 @@ int main(){
 
     pq.displayQueue();
 
-    pq.deleteMin();
+    //pq.deleteMin();
     
-    /*
     pq.insert(34);
     pq.insert(7);
     pq.insert(56);
@@ -43,7 +42,6 @@ int main(){
     pq.deleteMin();
 
     pq.displayQueue();
-    */
 
    
 
