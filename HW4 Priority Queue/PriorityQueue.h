@@ -37,8 +37,10 @@ class PriorityQueue{
         bool isEmpty() const; 
         // inserts new element x into the heap 
         void insert(const T& x);
-        // removes the minumum element from heap. In binary min-heap, this is the root. 
+        // removes the minumum element from heap. In binary min-heap, this is the root
         void deleteMin();
+        // displays minimum value
+        void displayMin() const;
         // print queue
         void displayQueue() const;
 };

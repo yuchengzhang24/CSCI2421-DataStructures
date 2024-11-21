@@ -93,6 +93,11 @@ void PriorityQueue<T>::percolateDown(int hole){
     array[hole] = tmp;
 }
 
+// display minimum value
+template <class T>
+void PriorityQueue<T>::displayMin() const{
+    cout << array[1];
+}
 
 // print array representation queue
 template <class T>
